@@ -1,11 +1,9 @@
-@import "@openedx/paragon/scss/core/core";
-
 .explore-courses-btn {
   padding-top: 16px;
 }
 
 .panel-background {
-  background: $light-200;
+  background: var(--pgn-color-light-200);
 }
 
 .recommendations-loading {
@@ -13,5 +11,5 @@
   justify-content: center;
   align-items: center;
   height: 7.813rem;
-  background: $light-200;
+  background: var(--pgn-color-light-200);
 }
