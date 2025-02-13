@@ -1,5 +1,5 @@
 // frontend-app-*/src/index.scss
-@use "@openedx/paragon/styles/css/core/custom-media-breakpoints.css" as paragonCustomMediaBreakpoints;
+@use "~@openedx/paragon/styles/css/core/custom-media-breakpoints.css" as paragonCustomMediaBreakpoints;
 
 @import "~@edx/brand/paragon/fonts";
 @import "~@edx/brand/paragon/variables";
