@@ -54,7 +54,7 @@ const getLearnerHeaderMenu = (
         },
         ...(getConfig().ORDER_HISTORY_URL ? [{
           type: 'item',
-          href: getConfig().ORDER_HISTORY_URL,
+          href: `${getConfig().ORDER_HISTORY_URL}`,
           content: formatMessage(messages.orderHistory),
         }] : []),
       ],

@@ -3,8 +3,8 @@ import { shallow } from '@edx/react-unit-test-utils';
 import Header from '@edx/frontend-component-header';
 
 import urls from 'data/services/lms/urls';
-import LearnerDashboardHeader from '.';
 import { findCoursesNavClicked } from './hooks';
+import LearnerDashboardHeader from '.';
 
 jest.mock('hooks', () => ({
   reduxHooks: {
