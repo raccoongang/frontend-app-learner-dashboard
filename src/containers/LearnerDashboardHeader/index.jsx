@@ -1,22 +1,38 @@
 import React from 'react';
+import { AppContext } from '@edx/frontend-platform/react';
+import Header from '@edx/frontend-component-header';
+import { reduxHooks } from 'hooks';
 
 import MasqueradeBar from 'containers/MasqueradeBar';
+import urls from 'data/services/lms/urls';
 import ConfirmEmailBanner from './ConfirmEmailBanner';
+import { useLearnerDashboardHeaderMenu, findCoursesNavClicked } from './hooks';
 
-import CollapsedHeader from './CollapsedHeader';
-import ExpandedHeader from './ExpandedHeader';
+export const LearnerDashboardHeader = () => {
+  const { authenticatedUser } = React.useContext(AppContext);
+  const { courseSearchUrl } = reduxHooks.usePlatformSettingsData();
 
-import './index.scss';
+  const exploreCoursesClick = () => {
+    findCoursesNavClicked(urls.baseAppUrl(courseSearchUrl));
+  };
 
-export const LearnerDashboardHeader = () => (
-  <>
-    <ConfirmEmailBanner />
-    <CollapsedHeader />
-    <ExpandedHeader />
-    <MasqueradeBar />
-  </>
-);
+  const { mainMenu, secondaryMenu, userMenu } = useLearnerDashboardHeaderMenu({
+    courseSearchUrl,
+    authenticatedUser,
+    exploreCoursesClick,
+  });
 
-LearnerDashboardHeader.propTypes = {};
+  return (
+    <>
+      <ConfirmEmailBanner />
+      <Header
+        mainMenuItems={mainMenu}
+        secondaryMenuItems={secondaryMenu}
+        userMenuItems={userMenu}
+      />
+      <MasqueradeBar />
+    </>
+  );
+};
 
 export default LearnerDashboardHeader;
