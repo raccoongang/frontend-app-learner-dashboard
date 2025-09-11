@@ -9,6 +9,10 @@ and this project adheres to customized Semantic Versioning e.g.: `teak-rg.1`
 [Unreleased]
 ************
 
+Fixed:
+======
+* disable Begin Course button if course is closed by prerequisites (CC-90)
+
 [release/teak-rg.1] - 2025-08-06
 ********************************
 
