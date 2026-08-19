@@ -9,6 +9,10 @@ and this project adheres to customized Semantic Versioning e.g.: `teak-rg.1`
 [Unreleased]
 ************
 
+Fixed:
+======
+* pull ``frontend-component-header`` translations so the header is localized (TEA-391)
+
 [release/teak-rg.3] - 2026-02-27
 ********************************
 
