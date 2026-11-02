@@ -1,4 +1,5 @@
 import React from 'react';
+import { getConfig } from '@edx/frontend-platform';
 import { AppContext } from '@edx/frontend-platform/react';
 import { keyStore } from 'utils';
 import { RequestKeys } from 'data/constants/requests';
@@ -234,14 +235,11 @@ describe('api hooks', () => {
       const sendEmailUrl = 'test-send-email-url';
       beforeEach(() => {
         reduxHooks.useEmailConfirmationData.mockReturnValue({ sendEmailUrl });
-        hook = apiHooks.useSendConfirmEmail(cardId);
+        hook = apiHooks.useSendConfirmEmail();
         out = hook();
       });
-      it('initializes useEmailConfirmationData hook', () => {
-        expect(reduxHooks.useEmailConfirmationData).toHaveBeenCalledWith();
-      });
-      it('posts to email url on call', () => {
-        expect(out).toEqual(post(sendEmailUrl));
+      it('posts to the LMS account activation email endpoint, not to sendEmailUrl, on call', () => {
+        expect(out).toEqual(post(`${getConfig().LMS_BASE_URL}/api/send_account_activation_email`));
       });
     });
 
