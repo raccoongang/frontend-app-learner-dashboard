@@ -9,6 +9,13 @@ and this project adheres to customized Semantic Versioning e.g.: `teak-rg.1`
 [Unreleased]
 ************
 
+[release/teak-rg.5] - 2026-11-25
+********************************
+
+Fixed:
+======
+* Send the confirm email request to the LMS activation endpoint (CC-83)
+
 [release/teak-rg.4] - 2026-09-10
 ********************************
 
